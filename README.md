@@ -52,6 +52,6 @@ This method condenses all commits from a feature branch into a single, unified c
 | :--- | :--- | :--- |
 | `feature-1` | **Merge** | Preserved the chain structure with a dedicated merge commit. |
 | `rebase-branch` | **Rebase** | Achieved a linear history; updated API for remote stock inventory. |
-| `sprint-squash` | **Squash** | Combined multiple incremental steps into one clean commit for the main branch. |
+| `squash` | **Squash** | Combined multiple incremental steps into one clean commit for the main branch. |
 
 > **Note:** While Rebasing creates a cleaner history, it should be used cautiously on public/shared branches as it changes existing commit IDs.
