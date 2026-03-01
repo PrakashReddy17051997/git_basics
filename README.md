@@ -1,40 +1,57 @@
-### Merge vs Rebase
-* The Git --distributed-is-the-new-centralized 
-* Based on new requirement a freature brach is created to add the new lines of code full the defined requirement in increamental steps.
-* Each change is add to the staging area (git add) and commited the feature branch with unique commit id (git commit -m "The feature is implemented")
-* once all the conditions are meet. The Pull request (PR) is created by developer to merge the code to main/target branch
+# Git Integration Strategies: Merge vs. Rebase vs. Squash
 
-### In order to merge the code. The fulling basic conditions should be meet:
-* User have to login to github/bitbucket or any remote console
-* select the target branch to which the feature branch has to merged
-* describe what are new features added to the code in PR description and create PR
-* once all developer or team members agree upon the changes and approve the merge request
-* The developer created the PR can merge the code to target branch
-## Pull request can be of three types:
-* Merge: creates a extra commit id to merge commit that has two parent commits
-    - one from feature/current branch and one from branch to which branch is merged 
-* Rebase: 
-Rebasing is a process of moving or combining a sequence of commits to a new base commit. It allows you to take the changes from one branch and reapply them on top of another branch
+This repository serves as a practical guide and record of my workflow for managing feature branches and integrating code into a main branch.
 
-### feature-1
+---
 
-* Devloper X has add this line of code
-* * X spend some y time to implement this feature
-* * To merge the feature-1 to main here we used merge strategy. 
-* * creates an extra commit for merge request which always have two parent commit ids
-* * it maintains a chain structure
+## The Development Workflow
 
-## rebase-branch
+In a distributed version control system, we follow a structured path to ensure code quality and stability:
 
-* Devloper YZ has implemented API to query the stock inverntory from remote
-* feature 2 requirement is fulfilled
-* Rebase merge strategy is used to merge the code
-* rewrites the history with new commit id's and hides the author details of commit's history before merge
-* maintians linear history of records
-* Git Rebase is preferable for small groups of people
-* developing still
-* now development is completed
-## Squash and merge
-* Instead of having all commit history from feature branch into main branch. 
-    * Having long list of commit ids on main branch leads to polluting main branch or poor followup for developers. single merge commit id is used to group finished commits and rebase branch head used a single commit id using sqaush and rebase method
-* squash method is idle for short sprint cycles and microservices development where each feature could be developed by one developer or few developers in a very small group
+1.  **Branching:** Based on new requirements, a **Feature Branch** is created to isolate development.
+2.  **Incremental Steps:** Changes are moved to the **Staging Area** (`git add`) and recorded with unique commit IDs (`git commit -m "Description"`).
+3.  **Integration:** Once requirements are met, a **Pull Request (PR)** is initiated to bring the code into the `main` or target branch.
+
+### Pull Request (PR) Requirements
+Before a merge can occur, the following steps are typically completed:
+* **Remote Access:** User logs into the remote console (GitHub/Bitbucket).
+* **Target Selection:** Explicitly define the branch (e.g., `main`) to receive the code.
+* **Documentation:** Describe the new features and changes within the PR description.
+* **Peer Review:** Team members review the code and provide approval.
+* **Finalization:** The PR creator or a maintainer executes the merge.
+
+---
+
+## 🛠 Integration Strategies
+
+I have practiced three primary methods for merging code, each with distinct impacts on the project history:
+
+### 1. Standard Merge
+The most common strategy that preserves the complete history of the feature branch.
+* **Mechanism:** Creates a new **Merge Commit** that points to two parents (the feature branch head and the target branch head).
+* **Structure:** Maintains a "chain" or "diamond" structure.
+* **Best For:** Projects where seeing the full context of a feature's development is critical.
+
+### 2. Git Rebase
+Rebasing is the process of moving or combining a sequence of commits to a new base commit.
+* **Mechanism:** Re-applies the changes from the feature branch on top of the latest commit on `main`.
+* **History:** It **rewrites history** with new commit IDs. It hides the "messy" intermediate history and provides a **linear timeline**.
+* **Best For:** Small groups or individual developers who want a clean, straight-line project history.
+
+### 3. Squash and Merge
+This method condenses all commits from a feature branch into a single, unified commit on the target branch.
+* **Mechanism:** Groups all finished work and rebases it into one commit ID.
+* **Benefits:** Prevents "polluting" the main branch with dozens of tiny commit IDs (like "fixed typo" or "temp save").
+* **Best For:** Short sprint cycles, microservices, and fast-paced environments where only the final result matters for the long-term log.
+
+---
+
+## Practice Examples in this Repo
+
+| Feature Branch | Strategy Used | Result |
+| :--- | :--- | :--- |
+| `feature-1` | **Merge** | Preserved the chain structure with a dedicated merge commit. |
+| `rebase-branch` | **Rebase** | Achieved a linear history; updated API for remote stock inventory. |
+| `sprint-squash` | **Squash** | Combined multiple incremental steps into one clean commit for the main branch. |
+
+> **Note:** While Rebasing creates a cleaner history, it should be used cautiously on public/shared branches as it changes existing commit IDs.
