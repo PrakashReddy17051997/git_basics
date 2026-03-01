@@ -35,5 +35,6 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 * developing still
 * now development is completed
 ## Squash and merge
-* Instead of having all commit history from feature branch into single merge commit id
+* Instead of having all commit history from feature branch into main branch. 
+    * Having long list of commit ids on main branch leads to polluting main branch or poor followup for developers. single merge commit id is used to group finished commits and rebase branch head used a single commit id using sqaush and rebase method
 * squash method is idle for short sprint cycles and microservices development where each feature could be developed by one developer or few developers in a very small group
