@@ -32,4 +32,5 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 * rewrites the history with new commit id's and hides the author details of commit's history before merge
 * maintians linear history of records
 * Git Rebase is preferable for small groups of people
+* developing still
 * now development is completed
