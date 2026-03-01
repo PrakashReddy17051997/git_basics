@@ -32,3 +32,4 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 * feature 2 requirement is fulfilled
 * Rebase merge strategy is used to merge the code
 * rewrites the history with new commit id's and hides the author details of commit's history before merge
+* maintians linear history of records
