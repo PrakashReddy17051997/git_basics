@@ -19,3 +19,4 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 ## feature-1
 
 * Devloper X has add this line of code
+* X spend some y time to implement this feature
