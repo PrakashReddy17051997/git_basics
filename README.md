@@ -37,4 +37,4 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 
 
 ## Squash and merge
-* instead having all commit history from feature branch into single merge commit id 
+* Instead of having all commit history from feature branch into single merge commit id 
