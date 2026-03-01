@@ -34,3 +34,6 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 * Git Rebase is preferable for small groups of people
 * developing still
 * now development is completed
+## Squash and merge
+* Instead of having all commit history from feature branch into single merge commit id
+* squash method is idle for short sprint cycles and microservices development where each feature could be developed by one developer or few developers in a very small group
