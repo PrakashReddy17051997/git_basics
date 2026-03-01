@@ -18,8 +18,8 @@ Rebasing is a process of moving or combining a sequence of commits to a new base
 
 ## feature-1
 
-* Devloper X has add this line of code
-* X spend some y time to implement this feature
+* Devloper X has added this line of code
+* X spends some y amount of time to implement this feature
 * To merge the feature-1 to main here we used merge strategy.
 * creates an extra commit for merge request which always have two parent commit ids
 * it maintains a chain structure
