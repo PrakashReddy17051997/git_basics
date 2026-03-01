@@ -16,7 +16,6 @@
 * Rebase: 
 Rebasing is a process of moving or combining a sequence of commits to a new base commit. It allows you to take the changes from one branch and reapply them on top of another branch
 
-## feature-1
 ### feature-1
 
 * Devloper X has add this line of code
